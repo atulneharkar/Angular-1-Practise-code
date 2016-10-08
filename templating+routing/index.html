@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      .emp-info {
+        padding: 0 10px;
+        border: 1px solid #000;
+        margin: 10px 0;
+      }
+    </style>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+    <script src="../../jquery/jquery.min.js"></script>
+    <script src="../../angular/angular.min.js"></script>
+    <script src="../../angular/angular-route.js"></script>
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app='myApp'>
+    <div ng-include="'header.html'"></div>
+
+    <div id="main">
+      <div ng-view></div>
+    </div>
+    
+    <ng-include src="'footer.html'"></ng-include>
+  </body>
+</html>

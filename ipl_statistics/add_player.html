@@ -1,0 +1,21 @@
+<a ui-sref="home">Back</a>
+<form>
+  <div>
+    <label for="name">Name</label>
+    <input type="text" ng-model="playerName" />
+  </div>
+  <div>
+    <label for="runs">Runs Scored</label>
+    <input type="text" ng-model="runs" />
+  </div>
+  <div>
+    <label for="balls">Balls Faced</label>
+    <input type="text" ng-model="balls" />
+  </div>
+  <div>
+    <label for="matches">Matches Played</label>
+    <input type="text" ng-model="matches" />
+  </div>
+  <input type="hidden" ng-model="playerId">
+  <button type="submit" ng-click='processForm()'>Submit</button>
+</form>

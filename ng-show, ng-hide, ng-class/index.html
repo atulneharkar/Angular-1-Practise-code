@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+    .red { color: red; }
+    .blue { color: blue; }
+    .yellow { color: yellow; }
+    </style>
+    <script data-require="angular.js@1.4.0" data-semver="1.3.15" src="https://code.angularjs.org/1.3.15/angular.js"></script>
+    <script data-require="jquery@*" data-semver="2.1.4" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div ng-app='myApp'>
+      <div ng-controller="FirstCtrl">
+
+        <input ng-model="number">
+        <button ng-click="check(number)">Check</button>
+        <!-- show if our function evaluates to false -->
+        <div ng-show="even">
+          <h2>The number is even.</h2>
+        </div>
+          
+        <!-- show if our function evaluates to false -->
+        <div ng-show="odd">
+          <h2>The number is odd.</h2>
+        </div>
+      </div>
+
+      <div ng-controller="SecondCtrl">
+
+        <input ng-model="setClass">
+        <p ng-class="setClass">This is dummy text</p> 
+
+        <input type="checkbox" ng-model="red">red
+        <input type="checkbox" ng-model="blue">blue
+        <input type="checkbox" ng-model="yellow">yellow
+
+        <p ng-class="{'blue': blue, 'red': red, 'yellow': yellow}">This is dummy text</p>
+        
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularJS Service Example</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	<!-- ng-app directive initializes the app -->
+	<div ng-app="serviceApp" ng-controller="SearchServiceCtrl">
+		<h1>{{searchservice}}</h1>
+
+		<!-- searchArtistController controls the artist area of the app -->
+		<div ng-controller="searchArtistController">
+
+			<!-- Input the starting alphabet with which you wanna search the artist, it will get saved in the 'artistLetter' model which will be accessed via $scope in the searchArtistController-->
+			Search an artist with an alphabet: <input type="text" ng-model="artistLetter">
+
+			<!-- ng-click directive invokes the searchArtist() fucntion which takes in artistLetter input via the textbox as a parameter -->
+			<input type="button" value="find artist" ng-click="searchArtist(artistLetter)">
+
+			<!-- when ng-if evaluates to true, this will show up in the DOM and will show the list of artists matching the letter entered above -->
+			<div ng-if="artistFound" ng-repeat="artist in foundArtists">
+				{{artist}}
+			</div>
+		</div>
+
+		<!-- searchPlayerController controls the player area of the app -->
+		<div ng-controller="searchPlayerController">
+			Search an artist with an alphabet: <input type="text" ng-model="playerLetter">
+			<input type="button" value="find player" ng-click="searchPlayer(playerLetter)">
+
+			<!-- when ng-if evaluates to true, this will show up in the DOM and will show the list of players matching the letter entered above -->
+			<div ng-if="nameFound" ng-repeat="name in foundPlayer">
+				{{name}}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

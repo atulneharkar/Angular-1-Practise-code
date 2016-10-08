@@ -1,0 +1,10 @@
+<div ng-controller="homeController">
+  <input type="text" ng-model="name" />
+  <button class="btn btn-primary" ng-click="searchEmp()">Search</button>
+  <div class="emp-info" ng-repeat="dat in data| filter: name">
+    <p>{{dat.name}}</p>
+    <p>{{dat.designation}}</p>
+    <p>{{dat.address}}</p>
+    <p>{{dat.mb}}</p>
+  </div>
+</div>

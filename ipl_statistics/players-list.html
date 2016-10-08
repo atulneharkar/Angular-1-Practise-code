@@ -1,0 +1,27 @@
+<a ui-sref="add-player" class="btn btn-danger">Add Player</a>
+<table>
+  <tr>
+    <th ng-repeat="field in fields">{{field.label}}</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr ng-repeat="dat in data">
+    <td>
+      {{dat.name}}
+    </td>
+    <td>
+      {{dat.runs}}
+    </td>
+    <td>
+      {{dat.matches}}
+    </td>
+    <td>
+      {{dat.avg | number: 2}}
+    </td>
+    <td>
+      {{dat.strike | number: 2}}
+    </td>
+    <td><a ui-sref="edit-player({playerId:dat.id})">Edit</a></td>
+    <td><a ng-click="deletePlayer(dat.id)">Delete</a></td>
+  </tr>
+</table>
